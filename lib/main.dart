@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'counter_page.dart';
-
+import 'store.counter/counter.dart';
+final counter = Counter();
 void main() {
   runApp(MyApp());
 }

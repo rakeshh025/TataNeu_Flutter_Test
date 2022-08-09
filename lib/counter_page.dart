@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:mobx_sample/store.counter/counter.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
+
+import 'main.dart';
 
 class CounterPage extends StatelessWidget {
-  final Counter counter = Counter();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,7 +16,8 @@ class CounterPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text('Counter', style: TextStyle(fontSize: 30)),
-            Text('0', style: TextStyle(fontSize: 30)),
+            Observer(builder: (_) => Text('${counter.count}', style: TextStyle(fontSize: 30)),),
+
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
